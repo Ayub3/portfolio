@@ -5,7 +5,7 @@ import NavBar from './Components/NavBar.jsx';
 // import Projects from './sections/Projects';
 // import Blogs from './sections/Blogs';
 // import Contact from './sections/Contact';
-// import Footer from './components/Footer';
+import Footer from './Components/Footer';
 // import { animateScroll as scroll } from 'react-scroll';
 // import { FiArrowUp } from 'react-icons/fi';
 
@@ -32,7 +32,7 @@ function App() {
                 <Blogs />
                 <Contact />
             </main> */}
-            {/* <Footer /> */}
+            <Footer />
 
             {/* --------SCROLL TO TOP BUTTON-------- */}
         </>

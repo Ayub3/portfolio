@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import './App.css';
 import NavBar from './Components/NavBar.jsx';
-// import Home from './sections/Home';
-// import Projects from './sections/Projects';
-// import Blogs from './sections/Blogs';
-// import Contact from './sections/Contact';
+import Home from './Sections/Home';
+import Projects from './Sections/Project';
+import Blogs from './Sections/Blog';
+import Contact from './Sections/Contact';
 import Footer from './Components/Footer';
-// import { animateScroll as scroll } from 'react-scroll';
-// import { FiArrowUp } from 'react-icons/fi';
+import { animateScroll as scroll } from 'react-scroll';
+import { FiArrowUp } from 'react-icons/fi';
 
 function App() {
     const [visible, setVisible] = useState(false);
@@ -26,15 +26,23 @@ function App() {
     return (
         <>
             <NavBar />
-            {/* <main className="main-container">
+            <main className="main-container">
                 <Home />
                 <Projects />
                 <Blogs />
                 <Contact />
-            </main> */}
+            </main>
             <Footer />
-
             {/* --------SCROLL TO TOP BUTTON-------- */}
+
+            {visible && (
+                <button
+                    onClick={() => scroll.scrollToTop()}
+                    className="scroll-top-btn"
+                >
+                    <FiArrowUp style={{ fontSize: '1.5rem', color: '#fff' }} />
+                </button>
+            )}
         </>
     );
 }

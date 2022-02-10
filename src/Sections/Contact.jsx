@@ -1,6 +1,8 @@
 import { Button, TextField } from '@mui/material';
 import { Box } from '@mui/system';
 import { useState } from 'react';
+import emailjs from 'emailjs-com';
+import './contact.css';
 
 const Contact = () => {
     const [data, setData] = useState({
@@ -10,117 +12,62 @@ const Contact = () => {
         message: '',
     });
 
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs
+            .sendForm(
+                'service_pti1ir9',
+                'template_2b8n4qt',
+                e.target,
+                'user_h3yP82CcUFoUeRlHzQYrM'
+            )
+            .then(
+                (result) => {
+                    console.log(result.text);
+                },
+                (error) => {
+                    console.log(error.text);
+                }
+            );
+        e.target.reset();
+    };
+
     const submitHandler = (e) => {
         e.preventDefault();
         console.log(data);
     };
 
     return (
-        <section id="contact" className="top-margin">
-            <h1 className="section-title">Contact</h1>
+        <>
+            <div className="contact-form-container">
+                <h1 className="section-title">Get In Touch</h1>
+                <form onSubmit={sendEmail}>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Your Name"
+                    ></input>
 
-            <Box sx={{ mt: 8 }}>
-                <form onSubmit={submitHandler}>
-                    <div>
-                        <TextField
-                            type="text"
-                            label="Subject"
-                            variant="outlined"
-                            fullWidth
-                            autoComplete="off"
-                            InputLabelProps={{ className: 'textfield-color' }}
-                            inputProps={{ className: 'textfield-color' }}
-                            InputProps={{
-                                classes: {
-                                    notchedOutline: 'textfield-outline',
-                                },
-                            }}
-                            onChange={(e) =>
-                                setData({ ...data, subject: e.target.value })
-                            }
-                        />
-                    </div>
+                    <input
+                        type="email"
+                        placeholder="Email Address"
+                        size="30"
+                        required
+                    ></input>
 
-                    <div>
-                        <TextField
-                            type="text"
-                            label="Name"
-                            variant="outlined"
-                            fullWidth
-                            autoComplete="off"
-                            InputLabelProps={{ className: 'textfield-color' }}
-                            inputProps={{ className: 'textfield-color' }}
-                            sx={{ mt: 5 }}
-                            InputProps={{
-                                classes: {
-                                    notchedOutline: 'textfield-outline',
-                                },
-                            }}
-                            onChange={(e) =>
-                                setData({ ...data, name: e.target.value })
-                            }
-                        />
-                    </div>
+                    <textarea
+                        id="subject"
+                        name="subject"
+                        placeholder="Message"
+                        required
+                    ></textarea>
 
-                    <div>
-                        <TextField
-                            type="email"
-                            label="E-mail"
-                            variant="outlined"
-                            fullWidth
-                            autoComplete="off"
-                            required
-                            InputLabelProps={{ className: 'textfield-color' }}
-                            inputProps={{ className: 'textfield-color' }}
-                            sx={{ mt: 5 }}
-                            InputProps={{
-                                classes: {
-                                    notchedOutline: 'textfield-outline',
-                                },
-                            }}
-                            onChange={(e) =>
-                                setData({ ...data, email: e.target.value })
-                            }
-                        />
-                    </div>
-
-                    <div>
-                        <TextField
-                            type="text"
-                            label="Message"
-                            variant="outlined"
-                            fullWidth
-                            autoComplete="off"
-                            multiline
-                            rows={8}
-                            InputLabelProps={{ className: 'textfield-color' }}
-                            inputProps={{ className: 'textfield-color' }}
-                            sx={{ mt: 5 }}
-                            InputProps={{
-                                classes: {
-                                    notchedOutline: 'textfield-outline',
-                                },
-                            }}
-                            onChange={(e) =>
-                                setData({ ...data, message: e.target.value })
-                            }
-                        />
-                    </div>
-
-                    <Button
-                        type="submit"
-                        variant="contained"
-                        fullWidth
-                        sx={{
-                            mt: 7,
-                            py: 2,
-                        }}
-                    >
-                        Submit
-                    </Button>
+                    <input type="submit" value="Send"></input>
                 </form>
-            </Box>
-        </section>
+            </div>
+        </>
     );
 };
 

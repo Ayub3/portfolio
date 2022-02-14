@@ -29,7 +29,7 @@ function App() {
             <main className="main-container">
                 <Home />
                 <Projects />
-                <Blogs />
+                {/* <Blogs /> */}
                 <Contact />
             </main>
             <Footer />

@@ -9,18 +9,18 @@ const icons = [
         icon: (
             <BsGithub className="social-icon" style={{ marginRight: '2rem' }} />
         ),
-        link: 'https://github.com/',
+        link: 'https://github.com/ayub3',
     },
-    {
-        id: 2,
-        icon: (
-            <AiFillMediumSquare
-                className="social-icon"
-                style={{ marginRight: '2rem' }}
-            />
-        ),
-        link: 'https://medium.com/',
-    },
+    // {
+    //     id: 2,
+    //     icon: (
+    //         <AiFillMediumSquare
+    //             className="social-icon"
+    //             style={{ marginRight: '2rem' }}
+    //         />
+    //     ),
+    //     link: 'https://medium.com/',
+    // },
     {
         id: 3,
         icon: (
@@ -29,12 +29,12 @@ const icons = [
                 style={{ marginRight: '2rem' }}
             />
         ),
-        link: 'https://www.linkedin.com/login',
+        link: 'https://www.linkedin.com/in/ayub-mohamud-8410b9131/',
     },
     {
         id: 4,
         icon: <BiEnvelope className="social-icon" />,
-        link: 'mailto:ahmeraltaf67@gmail.com',
+        link: 'mailto:ayubmohamud14@gmail.com',
     },
 ];
 

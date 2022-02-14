@@ -1,50 +1,44 @@
-import { Card, CardContent, CardMedia, Grid, Typography } from '@mui/material';
-import memories from '../Images/memories.png';
-import pizza from '../Images/pizza.png';
-import shomium from '../Images/shomium.png';
+import {
+    Card,
+    CardContent,
+    CardMedia,
+    Grid,
+    Typography,
+    Button,
+    Stack,
+} from '@mui/material';
+import chatti from '../Images/chatti.png';
+import recycle from '../Images/recycle.png';
+import jummahadmin from '../Images/jummahadmin.png';
+import { BsArrowUpRightSquareFill } from 'react-icons/bs';
 
 const projectList = [
     {
         id: 1,
-        img: memories,
-        title: 'Memories',
+        img: chatti,
+        title: 'Chatti',
         description:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia,repudiandae quo! Fugit, labore. Alias dignissimos quos,nostrum et accusamus perspiciatis, minima fugit aut qui eapariatur fugiat sed, expedita molestias!',
+            "The app suggests fun, quick activities to do, which are targeted at children's early stages development goals.",
+        site: 'https://chatti-app.herokuapp.com/',
+        repo: 'https://github.com/Ayub3/chatti',
     },
     {
         id: 2,
-        img: pizza,
-        title: 'Pizza',
+        img: recycle,
+        title: 'Reduce,Reuse,Recycle',
         description:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia,repudiandae quo! Fugit, labore. Alias dignissimos quos,nostrum et accusamus perspiciatis, minima fugit aut qui eapariatur fugiat sed, expedita molestias!',
+            'An interactive game that teaches children the importance of recycling.',
+        site: 'https://reduce-reuse-recycle.netlify.app/',
+        repo: 'https://github.com/Ayub3/recycling-game',
     },
     {
         id: 3,
-        img: shomium,
-        title: 'Shomium',
+        img: jummahadmin,
+        title: 'Jummah App',
         description:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia,repudiandae quo! Fugit, labore. Alias dignissimos quos,nostrum et accusamus perspiciatis, minima fugit aut qui eapariatur fugiat sed, expedita molestias!',
-    },
-    {
-        id: 4,
-        img: pizza,
-        title: 'Pizza',
-        description:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia,repudiandae quo! Fugit, labore. Alias dignissimos quos,nostrum et accusamus perspiciatis, minima fugit aut qui eapariatur fugiat sed, expedita molestias!',
-    },
-    {
-        id: 5,
-        img: memories,
-        title: 'Memories',
-        description:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia,repudiandae quo! Fugit, labore. Alias dignissimos quos,nostrum et accusamus perspiciatis, minima fugit aut qui eapariatur fugiat sed, expedita molestias!',
-    },
-    {
-        id: 6,
-        img: shomium,
-        title: 'Shomium',
-        description:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia,repudiandae quo! Fugit, labore. Alias dignissimos quos,nostrum et accusamus perspiciatis, minima fugit aut qui eapariatur fugiat sed, expedita molestias!',
+            'An app that centralises all of my local mosques Friday Sermons.',
+        site: 'https://reduce-reuse-recycle.netlify.app/',
+        repo: 'https://github.com/Ayub3/JummahApp',
     },
 ];
 
@@ -57,6 +51,7 @@ const Projects = () => {
                     <Grid item sm={6} lg={4} key={project.id}>
                         <Card sx={{ background: '#1e1e1e', height: '100%' }}>
                             <CardMedia component="img" image={project.img} />
+
                             <CardContent>
                                 <Typography
                                     gutterBottom
@@ -66,6 +61,27 @@ const Projects = () => {
                                 >
                                     {project.title}
                                 </Typography>
+                                <div
+                                    style={{
+                                        display: 'flex',
+                                        'justify-content': 'space-between',
+                                    }}
+                                >
+                                    <Button
+                                        variant="contained"
+                                        target="_blank"
+                                        href={project.site}
+                                    >
+                                        Site
+                                    </Button>
+                                    <Button
+                                        variant="contained"
+                                        target="_blank"
+                                        href={project.repo}
+                                    >
+                                        Repo
+                                    </Button>
+                                </div>
 
                                 <Typography
                                     variant="body2"

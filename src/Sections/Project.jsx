@@ -61,7 +61,7 @@ const Projects = () => {
                                 >
                                     {project.title}
                                 </Typography>
-                                <div
+                                {/* <div
                                     style={{
                                         display: 'flex',
                                         'justify-content': 'space-between',
@@ -81,7 +81,7 @@ const Projects = () => {
                                     >
                                         Repo
                                     </Button>
-                                </div>
+                                </div> */}
 
                                 <Typography
                                     variant="body2"

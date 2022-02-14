@@ -40,8 +40,8 @@ const Contact = () => {
 
     return (
         <>
-            <div className="contact-form-container">
-                <h1 className="section-title">Get In Touch</h1>
+            <section id="contact" className="contact-form-container">
+                <h1 className="section-title">Contact</h1>
                 <form onSubmit={sendEmail}>
                     <input
                         type="text"
@@ -66,7 +66,7 @@ const Contact = () => {
 
                     <input type="submit" value="Send"></input>
                 </form>
-            </div>
+            </section>
         </>
     );
 };

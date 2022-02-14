@@ -34,14 +34,14 @@ const NavBar = () => {
                                 Projects
                             </p>
                         </Link>
-                        {/* <Link to="blogs" smooth={true} duration={1000}>
+                        <Link to="blogs" smooth={true} duration={1000}>
                             <p
                                 className="nav-link"
                                 onClick={() => setShowMenu(false)}
                             >
                                 Blogs
                             </p>
-                        </Link> */}
+                        </Link>
                         <Link to="contact" smooth={true} duration={1000}>
                             <p
                                 className="nav-link"

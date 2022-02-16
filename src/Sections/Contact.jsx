@@ -45,6 +45,14 @@ const Contact = () => {
                 <form onSubmit={sendEmail}>
                     <input
                         type="text"
+                        id="subject"
+                        name="subject"
+                        placeholder="Subject"
+                        size="30"
+                        required
+                    ></input>
+                    <input
+                        type="text"
                         id="name"
                         name="name"
                         placeholder="Your Name"
@@ -52,14 +60,15 @@ const Contact = () => {
 
                     <input
                         type="email"
+                        name="email"
                         placeholder="Email Address"
                         size="30"
                         required
                     ></input>
 
                     <textarea
-                        id="subject"
-                        name="subject"
+                        id="message"
+                        name="message"
                         placeholder="Message"
                         required
                     ></textarea>

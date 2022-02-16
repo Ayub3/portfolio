@@ -1,16 +1,17 @@
 import {
     Card,
+    CardActionArea,
     CardContent,
-    CardMedia,
     Grid,
     Typography,
-    Button,
-    Stack,
+    CardMedia,
 } from '@mui/material';
+import { Box } from '@mui/system';
+import { BsArrowUpRightSquareFill } from 'react-icons/bs';
+import { AiFillGithub, AiTwotoneProject } from 'react-icons/ai';
 import chatti from '../Images/chatti.png';
 import recycle from '../Images/recycle.png';
-import jummahadmin from '../Images/jummahadmin.png';
-import { BsArrowUpRightSquareFill } from 'react-icons/bs';
+import jummahadmin from '../Images/Screenshot 2022-02-16 at 18.22.53.png';
 
 const projectList = [
     {
@@ -18,26 +19,28 @@ const projectList = [
         img: chatti,
         title: 'Chatti',
         description:
-            "The app suggests fun, quick activities to do, which are targeted at children's early stages development goals.",
+            "An app that helps parents with their child's early stages development goals",
+
         site: 'https://chatti-app.herokuapp.com/',
         repo: 'https://github.com/Ayub3/chatti',
     },
     {
         id: 2,
         img: recycle,
-        title: 'Reduce,Reuse,Recycle',
+        title: 'Reuse & Recycle',
         description:
             'An interactive game that teaches children the importance of recycling.',
+
         site: 'https://reduce-reuse-recycle.netlify.app/',
         repo: 'https://github.com/Ayub3/recycling-game',
     },
     {
         id: 3,
-        img: jummahadmin,
         title: 'Jummah App',
+        img: jummahadmin,
         description:
             'An app that centralises all of my local mosques Friday Sermons.',
-        site: 'https://reduce-reuse-recycle.netlify.app/',
+        site: 'http://jummahadmin.s3-website.eu-west-2.amazonaws.com',
         repo: 'https://github.com/Ayub3/JummahApp',
     },
 ];
@@ -50,47 +53,63 @@ const Projects = () => {
                 {projectList.map((project) => (
                     <Grid item sm={6} lg={4} key={project.id}>
                         <Card sx={{ background: '#1e1e1e', height: '100%' }}>
-                            <CardMedia component="img" image={project.img} />
-
-                            <CardContent>
-                                <Typography
-                                    gutterBottom
-                                    variant="h5"
-                                    component="div"
-                                    sx={{ color: '#fff', textAlign: 'center' }}
-                                >
-                                    {project.title}
-                                </Typography>
-                                {/* <div
-                                    style={{
-                                        display: 'flex',
-                                        'justify-content': 'space-between',
-                                    }}
-                                >
-                                    <Button
-                                        variant="contained"
-                                        target="_blank"
-                                        href={project.site}
+                            <CardMedia
+                                component="img"
+                                style={{ height: '200px' }}
+                                image={project.img}
+                            />
+                            <CardActionArea>
+                                <CardContent>
+                                    <Box
+                                        sx={{
+                                            display: 'flex',
+                                            justifyContent: 'space-between',
+                                        }}
                                     >
-                                        Site
-                                    </Button>
-                                    <Button
-                                        variant="contained"
-                                        target="_blank"
-                                        href={project.repo}
-                                    >
-                                        Repo
-                                    </Button>
-                                </div> */}
+                                        <a
+                                            href={project.repo}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <AiFillGithub
+                                                style={{
+                                                    fontSize: '1.5rem',
+                                                    color: '#fff',
+                                                }}
+                                            />
+                                        </a>
+                                        <Typography
+                                            gutterBottom
+                                            variant="h5"
+                                            component="div"
+                                            sx={{ color: '#fff' }}
+                                        >
+                                            {project.title}
+                                        </Typography>
+                                        <a
+                                            href={project.site}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <BsArrowUpRightSquareFill
+                                                style={{
+                                                    fontSize: '1.5rem',
+                                                    color: '#fff',
+                                                }}
+                                            />
+                                        </a>
+                                    </Box>
 
-                                <Typography
-                                    variant="body2"
-                                    color="text.secondary"
-                                    sx={{ color: '#fff', mt: 2 }}
-                                >
-                                    {project.description}
-                                </Typography>
-                            </CardContent>
+                                    <Typography
+                                        variant="body2"
+                                        color="text.secondary"
+                                        style={{ 'text-align': 'center' }}
+                                        sx={{ color: '#fff', mt: 2 }}
+                                    >
+                                        {project.description}
+                                    </Typography>
+                                </CardContent>
+                            </CardActionArea>
                         </Card>
                     </Grid>
                 ))}
